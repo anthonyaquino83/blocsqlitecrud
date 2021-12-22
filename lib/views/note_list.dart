@@ -146,8 +146,6 @@ class _NotesList extends StatelessWidget {
                     icon: const Icon(Icons.delete),
                     onPressed: () {
                       // excluir nota atraves do id
-                      // context.read<NotesCubit>().excluirNota(note.id);
-                      // MyStatelessWidget();
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(

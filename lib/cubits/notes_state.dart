@@ -48,54 +48,6 @@ class NotesFailure extends NotesState {
   List<Object?> get props => [];
 }
 
-// campos do formulario aguardando validacao com sucesso
-class NotesValidating extends NotesState {
-  const NotesValidating({
-    this.note,
-    this.tituloMessage,
-    this.conteudoMessage,
-  });
-
-  final Note? note;
-  final String? tituloMessage;
-  final String? conteudoMessage;
-
-  NotesValidating copyWith({
-    Note? note,
-    String? tituloMessage,
-    String? conteudoMessage,
-  }) {
-    return NotesValidating(
-      note: note ?? this.note,
-      tituloMessage: tituloMessage ?? this.tituloMessage,
-      conteudoMessage: conteudoMessage ?? this.conteudoMessage,
-    );
-  }
-
-  @override
-  List<Object?> get props => [tituloMessage, conteudoMessage];
-}
-
-// campos do formulario validados com sucesso
-class NotesValidated extends NotesState {
-  const NotesValidated({
-    this.note,
-  });
-
-  final Note? note;
-
-  NotesValidated copyWith({
-    Note? note,
-  }) {
-    return NotesValidated(
-      note: note ?? this.note,
-    );
-  }
-
-  @override
-  List<Object?> get props => [note];
-}
-
 // operacao realizada com sucesso
 class NotesSuccess extends NotesState {
   const NotesSuccess();

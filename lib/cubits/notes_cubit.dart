@@ -56,40 +56,6 @@ class NotesCubit extends Cubit<NotesState> {
     }
   }
 
-  //validar formulario de edicao da nota
-  void validaForm(String titulo, String conteudo) {
-    Note editNote = Note(title: titulo, content: conteudo);
-    String cubitTituloMessage = '';
-    String cubitConteudoMessage = '';
-    bool formInvalid;
-
-    formInvalid = false;
-    if (titulo == '') {
-      formInvalid = true;
-      cubitTituloMessage = 'Preencha o título';
-    } else {
-      cubitTituloMessage = '';
-    }
-    if (conteudo == '') {
-      formInvalid = true;
-      cubitConteudoMessage = 'Preencha o conteúdo';
-    } else {
-      cubitConteudoMessage = '';
-    }
-
-    if (formInvalid == true) {
-      emit(NotesValidating(
-        note: editNote,
-        tituloMessage: cubitTituloMessage,
-        conteudoMessage: cubitConteudoMessage,
-      ));
-    } else {
-      emit(NotesValidated(
-        note: editNote,
-      ));
-    }
-  }
-
   //salvar nota
   Future<void> salvarNota(int? id, String titulo, String conteudo) async {
     Note editNote = Note(id: id, title: titulo, content: conteudo);

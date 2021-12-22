@@ -49,8 +49,8 @@ class NotesEditView extends StatelessWidget {
       _titleController.text = '';
       _contentController.text = '';
     } else {
-      _titleController.text = note!.title.toString();
-      _contentController.text = note!.content.toString();
+      _titleController.text = note!.title;
+      _contentController.text = note!.content;
     }
     return Scaffold(
       appBar: AppBar(
