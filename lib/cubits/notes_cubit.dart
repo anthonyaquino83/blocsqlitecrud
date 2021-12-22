@@ -48,7 +48,9 @@ class NotesCubit extends Cubit<NotesState> {
     await Future.delayed(const Duration(seconds: 2));
     try {
       await _databaseProvider.deleteAll();
-      buscarNotas();
+      emit(const NotesLoaded(
+        notes: [],
+      ));
     } on Exception {
       emit(const NotesFailure());
     }
